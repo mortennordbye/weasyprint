@@ -1,4 +1,4 @@
-# WeasyPrint pinned build, running as container-root (mapped to host UID with rootless Podman)
+# WeasyPrint pinned build, running as container-root (mapped to host UID with rootless Podman )
 FROM minidocks/python:3.12
 
 # Native deps + fonts (MS core + DejaVu fallback) + font cache
