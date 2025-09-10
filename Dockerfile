@@ -9,7 +9,12 @@ RUN apk add -u \
       font-dejavu \
  && update-ms-fonts \
  && fc-cache -f \
+ && mkdir -p /cache/fontconfig /var/cache/fontconfig \
+ && chmod 1777 /cache /cache/fontconfig /var/cache/fontconfig \
  && clean
+
+# Direct Fontconfig to a writable location regardless of runtime UID
+ENV XDG_CACHE_HOME=/cache
 
 # Install WeasyPrint pinned
 ENV PIP_ROOT_USER_ACTION=ignore
